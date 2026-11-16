@@ -1,4 +1,4 @@
-# Lab 0021 — Deploying a Zabbix Monitoring Server on Ubuntu Server
+# Lab 002 — Deploying a Zabbix Monitoring Server on Ubuntu Server
 
 **Date:** 2026-11-15 / 16
 **Environment:** VMware Workstation Pro 26H1 on Windows 11 Home; Ubuntu Server 26.04.1 LTS guest (4 GB RAM, 2 vCPU, 25 GB disk, bridged networking)
@@ -6,8 +6,9 @@
 **Related objectives:** Network+ N10-009 — network services, monitoring, troubleshooting methodology
 
 ---
+##
 
-## 1. Objective
+### 1. Objective
 
 Deploy a working Zabbix monitoring server in an isolated lab, from bare OS install through a functioning web console, and document the failures encountered along the way.
 
@@ -15,13 +16,13 @@ Secondary objective: build familiarity with Zabbix, SNMP, and network monitoring
 
 ---
 
-## 2. Scope
+### 2. Scope
 
 All work performed on virtual machines running on my own laptop, on my own home network. No external systems were accessed or tested. The Zabbix console is reachable only from inside the local network and is not exposed to the internet.
 
 ---
 
-## 3. Setup
+### 3. Setup
 
 | Component | Detail |
 |---|---|
@@ -34,13 +35,13 @@ All work performed on virtual machines running on my own laptop, on my own home 
 
 ---
 
-## 4. Methodology
+### 4. Methodology
 
-### 4.1 Hypervisor selection
+#### <ins>4.1 Hypervisor selection</ins>
 
 Initial attempt used VirtualBox. The Ubuntu installer hung indefinitely at `Begin: Loading essential drivers`. Diagnosis and resolution in **Finding 1**. Platform was changed to VMware Workstation Pro.
 
-### 4.2 Guest OS installation
+#### <ins>4.2 Guest OS installation</ins>
 
 Installed Ubuntu Server with:
 - Entire disk, LVM, no LUKS encryption (passphrase prompt at every boot would prevent headless reboot)
@@ -53,7 +54,7 @@ Verified network addressing:
 ip addr show
 ```
 
-### 4.3 System update and remote access
+#### <ins>4.3 System update and remote access</ins>
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -65,7 +66,7 @@ Administration moved from the hypervisor console to an SSH session, which allows
 ssh imurph@192.168.12.240
 ```
 
-### 4.4 Zabbix repository and package installation
+#### <ins>4.4 Zabbix repository and package installation</ins>
 
 ```bash
 wget https://repo.zabbix.com/zabbix/8.0/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_8.0+ubuntu26.04_all.deb
@@ -76,7 +77,7 @@ sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf \
   zabbix-agent2-plugin-mssql zabbix-agent2-plugin-postgresql
 ```
 
-### 4.5 Database server
+#### <ins>4.5 Database server</ins>
 
 The Zabbix packages provide a server binary built for MySQL but do not install MySQL itself. Installed separately:
 
@@ -84,7 +85,7 @@ The Zabbix packages provide a server binary built for MySQL but do not install M
 sudo apt install mysql-server -y
 ```
 
-### 4.6 Database creation
+#### <ins>4.6 Database creation</ins>
 
 ```sql
 create database zabbix character set utf8mb4 collate utf8mb4_bin;
@@ -94,7 +95,7 @@ set global log_bin_trust_function_creators = 1;
 quit;
 ```
 
-### 4.7 Schema import
+#### <ins>4.7 Schema import</ins>
 
 ```bash
 zcat /usr/share/zabbix/sql-scripts/mysql/server.sql.gz | \
@@ -115,7 +116,7 @@ Reverted the temporary MySQL setting, which is only required during import:
 set global log_bin_trust_function_creators = 0;
 ```
 
-### 4.8 Service configuration
+#### <ins>4.8 Service configuration</ins>
 
 Set the database password in `/etc/zabbix/zabbix_server.conf` (`DBPassword=`).
 
@@ -133,15 +134,15 @@ sudo nginx -t && sudo systemctl restart zabbix-server zabbix-agent2 nginx php8.5
 sudo systemctl enable zabbix-server zabbix-agent2 nginx php8.5-fpm
 ```
 
-### 4.9 Web setup
+#### <ins>4.9 Web setup</ins>
 
 Completed the setup wizard at `http://192.168.12.240` — database connection, instance name, timezone — then logged in and immediately changed the default `Admin` password.
 
 ---
 
-## 5. Findings
+### 5. Findings
 
-### Finding 1 — Windows hypervisor conflict prevented VirtualBox from running guests
+#### <ins>Finding 1 — Windows hypervisor conflict prevented VirtualBox from running guests</ins>
 
 **Symptom:** Ubuntu installer hung at `Begin: Loading essential drivers` for 15+ minutes. A turtle icon appeared in the VirtualBox status bar.
 
@@ -164,7 +165,7 @@ App Control for Business policy: Enforced
 
 ---
 
-### Finding 2 — Documentation prompt markers executed as shell comments
+#### <ins>Finding 2 — Documentation prompt markers executed as shell comments</ins>
 
 **Symptom:** Pasted installation commands produced no output and no errors. The shell returned immediately to a clean prompt.
 
@@ -176,7 +177,7 @@ App Control for Business policy: Enforced
 
 ---
 
-### Finding 3 — nginx failed to start due to a configuration typo
+#### <ins>Finding 3 — nginx failed to start due to a configuration typo</ins>
 
 **Symptom:** `systemctl restart nginx` failed with `control process exited with error code`.
 
@@ -205,7 +206,7 @@ nginx: configuration file /etc/nginx/nginx.conf test failed
 
 ---
 
-### Finding 4 — Default nginx site shadowed the Zabbix frontend
+#### <ins>Finding 4 — Default nginx site shadowed the Zabbix frontend</ins>
 
 **Symptom:** After nginx started successfully, `http://192.168.12.240` returned the default "Welcome to nginx!" page rather than the Zabbix frontend.
 
@@ -224,7 +225,7 @@ Removing the symlink disables the site while leaving the configuration available
 
 ---
 
-### Result
+#### <ins>Result</ins>
 
 Zabbix 8.0 frontend reachable at `http://192.168.12.240`, backed by MySQL with a 231-table schema, with the server monitoring itself as its first host.
 
@@ -232,7 +233,7 @@ Zabbix 8.0 frontend reachable at `http://192.168.12.240`, backed by MySQL with a
 
 ---
 
-## 6. Analysis
+### 6. Analysis
 
 **Why monitoring servers matter in a NOC.** A Zabbix server is the system that notices problems before customers report them. It polls devices, collects metrics, compares them against thresholds, and raises alerts that analysts triage. In a service-provider environment, the gap between an outage starting and an analyst seeing it is largely determined by how well this layer is configured.
 
@@ -248,7 +249,7 @@ I’d never really thought about how many separate pieces — operating system, 
 
 ---
 
-## 7. Remediation / Hardening
+### 7. Remediation / Hardening
 
 Applied or identified during the lab:
 
@@ -267,7 +268,7 @@ Identified for future work:
 
 ---
 
-## 8. What I Learned
+### 8. What I Learned
 
 Being that I’m still learning to code, I found it interesting rather than overwhelming that commands don’t translate across languages or operating systems. It’s like learning a second language — one only a machine understands — except in this field I’ll have to learn several.
 
@@ -282,7 +283,7 @@ Points worth covering:
 
 ---
 
-## 9. Next Steps
+### 9. Next Steps
 
 **Session 2 — Detection (lab-0022)**
 - Add a second Ubuntu host monitored via the Zabbix agent
@@ -300,7 +301,7 @@ Points worth covering:
 
 ---
 
-## 10. References
+### 10. References
 
 - Zabbix 8.0 installation documentation — zabbix.com/download
 - Ubuntu Server 26.04 LTS documentation
