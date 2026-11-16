@@ -275,7 +275,8 @@ Being that I’m still learning to code, I found it interesting rather than over
 I learned what Virtualization-Based Security and Memory Integrity are, why Windows 11 enables them by default, and why they conflict with third-party hypervisors.
 
 I also learned that running a command without an error doesn’t mean it worked. I pasted installation commands that began with #, which bash reads as a comment, so nothing ran and nothing complained. That mistake taught me to verify instead of assume — which is why I ran sudo mysql -e "use zabbix; show tables;" | wc -l to confirm 231 tables existed, rather than trusting that the import had succeeded.
-Points worth covering:
+
+<ins>Key Takeaways:</ins>
 - Silence is not success. The `#` comment issue produced no error at all.
 - Tools diagnose better than guesses. `nginx -t` and `msinfo32` each named the exact problem.
 - Security tradeoffs are decisions, not obstacles. Describe why you kept VBS enabled and changed platforms instead.
