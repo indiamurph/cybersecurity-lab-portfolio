@@ -156,11 +156,11 @@ App Control for Business policy: Enforced
 
 **Resolution:** Rather than disabling VBS — which would reduce the host's security posture — the lab was migrated to VMware Workstation Pro, which coexists with the Windows hypervisor through the Windows Hypervisor Platform API. Memory Integrity and Smart App Control remained enabled throughout.
 
-![msinfo32 showing VBS Running](Lab-002-zabbix/finding-1-1.png)
+![msinfo32 showing VBS Running](finding-1-1.png)
 
 ---
 
-![Task Manager confirming that Virtualization was in fact Enabled](Lab-002-zabbix/finding-1-2.png)
+![Task Manager confirming that Virtualization was in fact Enabled](finding-1-2.png)
 
 ---
 
@@ -191,7 +191,7 @@ nginx: [emerg] unknown directive "Wserver" in /etc/nginx/conf.d/zabbix.conf:1
 nginx: configuration file /etc/nginx/nginx.conf test failed
 ```
 
-![Showing the removal of the unknown directive](Lab-002-zabbix/finding-3-2.png)
+![Showing the removal of the unknown directive](finding-3-2.png)
 
 ---
 
@@ -201,7 +201,7 @@ nginx: configuration file /etc/nginx/nginx.conf test failed
 
 **Takeaway:** `nginx -t` reports the exact file, line number, and offending directive. Running it before every restart converts a vague service failure into a precise, actionable error.
 
-![Showing the previous errors due to the unknown directive and the results once resolved using inx -t output](Lab-002-zabbix/finding-3-1.png)
+![Showing the previous errors due to the unknown directive and the results once resolved using inx -t output](finding-3-1.png)
 
 ---
 
@@ -220,7 +220,7 @@ sudo nginx -t && sudo systemctl restart nginx
 
 Removing the symlink disables the site while leaving the configuration available in `sites-available/`.
 
-![Zabbix setup wizard](Lab-002-zabbix/finding-4.png)
+![Zabbix setup wizard](finding-4.png)
 
 ---
 
@@ -228,7 +228,7 @@ Removing the symlink disables the site while leaving the configuration available
 
 Zabbix 8.0 frontend reachable at `http://192.168.12.240`, backed by MySQL with a 231-table schema, with the server monitoring itself as its first host.
 
-![Zabbix dashboard after login](Lab-002-zabbix/finding-5.png)
+![Zabbix dashboard after login](finding-5.png)
 
 ---
 
