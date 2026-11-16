@@ -1,4 +1,4 @@
-# Lab 1.1.8: Build a Star Topology
+# Build a Star Topology
 
 **Domain:** Networking Concepts: Physical Topologies
 **Environment:** Simulated network lab
