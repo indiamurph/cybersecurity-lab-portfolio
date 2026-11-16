@@ -1,4 +1,4 @@
-# Lab 1.3.9: Add Wi-Fi to a Home Network
+# Add Wi-Fi to a Home Network
 
 **Domain:** Network Implementation: Wireless
 **Environment:** Simulated home network and Windows 11 client
