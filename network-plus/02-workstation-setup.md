@@ -1,4 +1,4 @@
-# Lab 1.3.8: Set Up a Workstation
+# Setting Up a Workstation
 
 **Domain:** Hardware and Cabling Fundamentals
 **Environment:** Simulated hardware workbench and Windows 11 OS simulator
