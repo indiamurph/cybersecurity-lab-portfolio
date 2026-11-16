@@ -9,6 +9,7 @@ Write-ups of the guided networking labs I completed while studying for the CompT
 | 003 | [Add Wi-Fi to a Home Network](lab-003-home-wireless-network.md) | 2.3: Wireless devices and technologies | Wireless APs, 802.11, WLAN clients | 100% |
 | 004 | [Build a SOHO Network](lab-004-soho-network.md) | 1.7: IPv4 addressing · 3.4: Network services | Switching, routing, DHCP, ICMP | 100% |
 | 005 | [Troubleshooting Methodology](lab-005-troubleshooting-methodology.md) | 5.1: Troubleshooting methodology | 7-step methodology, static vs. DHCP | 100% |
+| 006 | [Install a NIC and Reconnect to Ethernet](lab-006-reconnect-ethernet.md) | 1.5: Transmission media · 2.4: Physical installation | NIC install, 1000BASE-T, Cat5e, PCIe | 100% |
 
 ## Skills shown
 
@@ -18,6 +19,7 @@ Write-ups of the guided networking labs I completed while studying for the CompT
 - Building a small office/home office network: router, switch and endpoints
 - Checking DHCP leases (IP, subnet, gateway, DNS) and testing reachability with `ping`
 - Using a structured troubleshooting method to isolate and fix a misconfigured host
+- Choosing and installing a NIC that matches the Ethernet standard and cable (1000BASE-T over Cat5e)
 
 ---
 
