@@ -1,13 +1,14 @@
 # Network+ Hands-On Lab Portfolio
 
-Write-ups of the simulated networking labs I completed while studying for the CompTIA Network+ (N10-009) exam. Each report covers what I built, the concepts behind it, how I checked it worked, and what I took away.
+Write-ups of the guided networking labs I completed while studying for the CompTIA Network+ (N10-009) exam. Each report covers what I built, the concepts behind it, how I checked it worked, and what I took away.
 
-| # | Lab | Focus | Result |
-|---|-----|-------|--------|
-| 1.1.8 | [Build a Star Topology](01-star-topology.md) | Physical topologies, switches | 100% |
-| 1.3.8 | [Set Up a Workstation](02-workstation-setup.md) | Hardware, cabling, peripherals | 100% |
-| 1.3.9 | [Add Wi-Fi to a Home Network](03-home-wireless-network.md) | Wireless APs, 802.11, WLAN clients | 100% |
-| 1.3.10 | [Build a SOHO Network](04-soho-network.md) | Switching, routing, DHCP, ICMP | 100% |
+| # | Lab | Exam Objective (N10-009) | Focus | Result |
+|---|-----|--------------------------|-------|--------|
+| 001 | [Build a Star Topology](lab-001-star-topology.md) | 1.6: Network topologies and architectures | Physical topologies, switches | 100% |
+| 002 | [Set Up a Workstation](lab-002-workstation-setup.md) | 2.4: Physical installation | Hardware, cabling, peripherals | 100% |
+| 003 | [Add Wi-Fi to a Home Network](lab-003-home-wireless-network.md) | 2.3: Wireless devices and technologies | Wireless APs, 802.11, WLAN clients | 100% |
+| 004 | [Build a SOHO Network](lab-004-soho-network.md) | 1.7: IPv4 addressing · 3.4: Network services | Switching, routing, DHCP, ICMP | 100% |
+| 005 | [Troubleshooting Methodology](lab-005-troubleshooting-methodology.md) | 5.1: Troubleshooting methodology | 7-step methodology, static vs. DHCP | 100% |
 
 ## Skills shown
 
@@ -16,6 +17,7 @@ Write-ups of the simulated networking labs I completed while studying for the Co
 - Adding a wireless access point to a wired router and joining a client to the WLAN
 - Building a small office/home office network: router, switch and endpoints
 - Checking DHCP leases (IP, subnet, gateway, DNS) and testing reachability with `ping`
+- Using a structured troubleshooting method to isolate and fix a misconfigured host
 
 ---
 
