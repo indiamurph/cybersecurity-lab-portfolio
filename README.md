@@ -24,6 +24,14 @@ Directory home lab, and SIEM work in Splunk.
 
 ---
 
+## Guided Coursework Labs
+
+| Track | Labs Completed | Focus | Date |
+|-------|----------------|-------|------|
+| [Network+ (N10-009)](network-plus/README.md) | 4 — topologies, cabling, wireless, SOHO | Physical topologies, structured cabling, 802.11 wireless, SOHO networking, DHCP addressing, ICMP connectivity testing | Nov 2026 |
+
+---
+
 ## Certifications
 
 - **CompTIA A+ ce** — Certified [Verify](https://www.credly.com/badges/b96aed2e-90f5-4f3b-acc4-e3948636db43/public_url)
