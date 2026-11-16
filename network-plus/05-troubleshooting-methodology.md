@@ -1,4 +1,4 @@
-# Lab 1.4.10: Troubleshooting Methodology
+# Troubleshooting Methodology
 
 **Domain:** Network Troubleshooting: Troubleshooting Methodology, IP Configuration
 **Environment:** Network modeler and Windows 11 clients
