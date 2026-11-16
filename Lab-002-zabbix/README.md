@@ -220,7 +220,7 @@ sudo nginx -t && sudo systemctl restart nginx
 
 Removing the symlink disables the site while leaving the configuration available in `sites-available/`.
 
-![Zabbix setup wizard](images/finding-4.png)
+![Zabbix setup wizard](images/finding-4.jpeg)
 
 ---
 
