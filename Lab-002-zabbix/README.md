@@ -285,7 +285,7 @@ Points worth covering:
 
 ### 9. Next Steps
 
-**Session 2 — Detection (lab-0022)**
+**Session 2 — Detection**
 - Add a second Ubuntu host monitored via the Zabbix agent
 - Configure SNMP polling (`snmpd`, community string, `snmpwalk` verification) and attach an SNMP template
 - Simulate and validate detection of:
@@ -294,7 +294,7 @@ Points worth covering:
   - network latency and packet loss (`tc`)
 - Build a dashboard covering host availability, CPU, and network traffic
 
-**Session 3 — Mitigation (lab-0023)**
+**Session 3 — Mitigation**
 - Apply `ufw` firewall rules and connection rate limiting
 - Configure `fail2ban` for SSH
 - Re-run the Session 2 simulations to confirm the defenses hold
