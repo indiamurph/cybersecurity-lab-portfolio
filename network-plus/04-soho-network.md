@@ -1,4 +1,4 @@
-# Lab 1.3.10: Build a SOHO Network
+# Build a SOHO Network
 
 **Domain:** Network Implementation and Operations: Addressing, DHCP, Connectivity Testing
 **Environment:** Network modeler canvas and Windows 11 client
