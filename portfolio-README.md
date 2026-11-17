@@ -10,7 +10,7 @@ scope, methodology, evidence, and remediation.
 
 **Currently:** Building out a monitoring lab and studying for Network+ (exam
 targeted December 2026) — daily hands-on work in Zabbix, Wireshark, CertMaster,
-and TryHackMe.
+and TryHackMe, with 12 guided Network+ labs documented so far.
 **Next:** CompTIA Security+ (targeted January 2027), a Windows Server / Active
 Directory home lab, and SIEM work in Splunk.
 
@@ -28,7 +28,7 @@ Directory home lab, and SIEM work in Splunk.
 
 | Track | Labs Completed | Focus | Date |
 |-------|----------------|-------|------|
-| [Network+ (N10-009)](network-plus/README.md) | 4 — topologies, cabling, wireless, SOHO | Physical topologies, structured cabling, 802.11 wireless, SOHO networking, DHCP addressing, ICMP connectivity testing | Nov 2026 |
+| [Network+ (N10-009)](network-plus/README.md) | 12 — topologies, cabling, fiber, wireless, SOHO, troubleshooting | Physical topologies, structured cabling and patch panels, multimode fiber (SFP, LC/SC), 802.11 wireless, cable broadband, DHCP addressing, UPS power protection, 7-step troubleshooting methodology | Nov 2026 |
 
 ---
 
@@ -46,8 +46,9 @@ Directory home lab, and SIEM work in Splunk.
 
 `Linux Server Administration` · `Network Monitoring (Zabbix)` · `SNMP` ·
 `MySQL` · `nginx` · `VMware` · `TCP/IP` · `DNS` · `DHCP` · `Subnetting` ·
-`VLANs` · `Routing` · `Wireshark` · `Packet Analysis` · `Windows` ·
-`Log Analysis` · `Troubleshooting` · `Technical Documentation`
+`VLANs` · `Routing` · `Structured Cabling` · `Fiber Optics (SFP, LC/SC)` ·
+`Wireshark` · `Packet Analysis` · `Windows` · `Log Analysis` ·
+`Troubleshooting` · `Technical Documentation`
 
 ---
 
