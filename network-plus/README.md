@@ -12,6 +12,10 @@ Write-ups of the guided networking labs I completed while studying for the CompT
 | 006 | [Install a NIC and Reconnect to Ethernet](lab-006-reconnect-ethernet.md) | 1.5: Transmission media · 2.4: Physical installation | NIC install, 1000BASE-T, Cat5e, PCIe | 100% |
 | 007 | [Connect a Workstation to Structured Cabling](lab-007-connect-ethernet.md) | 1.5: Transmission media · 2.4: Physical installation | Wall plates, patch cables, Cat6a | 100% |
 | 008 | [Connect a Cable Modem for Internet Access](lab-008-cable-modem.md) | 1.5: Transmission media · 2.4: Physical installation | Coax (RG-6, F-type), DOCSIS, WAN vs. LAN | 100% |
+| 009 | [Install a NIC Safely and Test UPS Failover](lab-009-nic-install-and-ups.md) | 2.4: Physical installation | Safe hardware handling, PCIe, UPS | 100% |
+| 010 | [Connect Switches Between Floors with Fiber](lab-010-fiber-between-floors.md) | 1.5: Transmission media · 2.4: Physical installation | SFP, LC/SC, multimode fiber, UPS critical load | 100% |
+| 011 | [Patch an Office Drop and Enable DHCP](lab-011-patch-panel-and-dhcp.md) | 2.4: Physical installation · 3.4: Network services | Patch panels, structured cabling, DHCP | 100% |
+| 012 | [Patch Panel to Switch Port Mapping](lab-012-patch-panel-port-mapping.md) | 2.4: Physical installation · 3.1: Documentation | Port maps, cable documentation | 100% |
 
 ## Skills shown
 
@@ -23,6 +27,8 @@ Write-ups of the guided networking labs I completed while studying for the CompT
 - Using a structured troubleshooting method to isolate and fix a misconfigured host
 - Choosing and installing a NIC that matches the Ethernet standard and cable (1000BASE-T over Cat5e)
 - Connecting to structured cabling and setting up cable broadband (RG-6 coax, F-type, WAN vs. LAN)
+- Linking network closets with multimode fiber (SFP transceivers, LC/SC connectors, fiber patch panels)
+- Patching drops to documented switch ports and protecting rack gear with a UPS
 
 ---
 
